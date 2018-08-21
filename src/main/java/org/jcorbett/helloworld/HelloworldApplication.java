@@ -31,7 +31,7 @@ class HelloWorldMessage {
 
 	public HelloWorldMessage(String message) {
 		this.message = message;
-		this.random = new byte[16];
+		this.random = new byte[512];
 		HelloWorldMessage.Rand.nextBytes(this.random);
 	}
 
