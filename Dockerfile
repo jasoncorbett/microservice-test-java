@@ -1,10 +1,9 @@
-FROM openjdk:8-jdk AS BUILD_SYSTEM
+FROM maven:3.5-jdk-8 AS BUILD_SYSTEM
 
-COPY pom.xml /tmp/
-COPY src /tmp/src
-WORKDIR /tmp/
+COPY src /usr/src/helloworld/src
+COPY pom.xml /usr/src/helloworld/
 
-RUN ./mvnw package
+RUN mvn -f /usr/src/helloworld/pom.xml clean:package
 
 FROM openjdk:8-jdk
 
