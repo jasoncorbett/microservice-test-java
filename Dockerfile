@@ -3,7 +3,7 @@ FROM maven:3.5-jdk-8 AS BUILD_SYSTEM
 COPY src /usr/src/helloworld/src
 COPY pom.xml /usr/src/helloworld/
 
-RUN mvn -f /usr/src/helloworld/pom.xml clean:package
+RUN mvn -f /usr/src/helloworld/pom.xml clean package
 
 FROM openjdk:8-jdk
 
