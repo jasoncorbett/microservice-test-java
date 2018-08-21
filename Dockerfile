@@ -7,7 +7,7 @@ RUN mvn -f /usr/src/helloworld/pom.xml clean package
 
 FROM openjdk:8-jdk
 
-COPY --from BUILD_SYSTEM /tmp/target/*.jar /helloworld.jar
+COPY --from BUILD_SYSTEM /usr/src/helloworld/target/*.jar /helloworld.jar
 
 EXPOSE 8080
 
